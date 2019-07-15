@@ -1,20 +1,12 @@
-function UpgradeYourName(){
+var FIO = prompt('Введите ваше Ф.И.О:');
 
-var name = prompt('Введите ваше Ф.И.О:');
-var firstName = '';
-var nextName = '';
-
-for (var i = 0; i < name.length; i++ ){
-        if (i === 0){
-            nextName = name[i].toUpperCase();
-        } else if (name[i - 1] === ' ') {
-            nextName = name[i].toUpperCase();
-        } else {
-            nextName = name[i].toLowerCase();
-        }
-        firstName += nextName;
+function UpgradeYourName(str){
+    var arr = str.split(' ');
+    for(var i = 0; i < arr.length; i++){
+        arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1).toLowerCase() ;
     }
-alert (firstName);
+    var str = arr.join(' ');
+    return str;
 }
 
-UpgradeYourName();
+alert(UpgradeYourName(FIO));
